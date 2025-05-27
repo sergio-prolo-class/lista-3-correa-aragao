@@ -3,6 +3,9 @@
  */
 package ifsc.poo;
 
+// A comunicação com o usuário deve ser através do terminal
+// usando um menu iterativo, através do qual é
+
 public class App {
     public static void main(String[] args) {
 
