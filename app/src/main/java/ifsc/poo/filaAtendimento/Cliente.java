@@ -14,8 +14,20 @@ public class Cliente {
         this.numTelefone = numTelefone;
     }
 
-    
+    public String getNome() {
+        return nome;
+    }
 
+    public int getIdade() {
+        return idade;
+    }
 
+    public List<String> getNumTelefone() {
+        return numTelefone;
+    }
 
+    @Override
+    public String toString() {
+        return "Cliente { " + " nome = '" + nome + '\'' + ", idade = " + idade + ", numTelefone = " + numTelefone + '}';
+    }
 }
