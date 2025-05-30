@@ -1,8 +1,12 @@
 package ifsc.poo.login;
 
+import java.util.List;
+
 public class Cliente {
 
     private String nome;
     private int idade;
-    private int numTelefone;
+    private List<String> numTelefone;
+
+
 }
