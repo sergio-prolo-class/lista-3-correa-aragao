@@ -102,9 +102,28 @@ public class Atendimento {
         System.out.println("Encerrado lista");
 
     }
-    
 
     // Listar as idades dos clientes já atendidos
+    public void clientesAtendidosIdades() {
+        System.out.println("Idades dos clientes atendidos");
+
+        if (atendidosClientes.isEmpty()){
+            System.out.println("Nenhum cliente atendido");
+            return;
+        }
+
+        // pegar os nomes e idades dos clientes na base de atendidos
+        for (Cliente cliente : atendidosClientes) {
+            String clienteNome = cliente.getNome();
+            int clienteIdade = cliente.getIdade();
+
+            System.out.println("Cliente " + clienteNome + ", tem idade: " + clienteIdade " anos");
+        }
+
+        System.out.println("Lista encerrada.");
+
+    }
+
     // Listar os telefones dos clientes ainda em espera
 
 }
