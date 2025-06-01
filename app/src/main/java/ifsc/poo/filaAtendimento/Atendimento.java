@@ -62,11 +62,34 @@ public class Atendimento {
 
 
     // próximo clientes da fila
-    public void proximosClientes {
+    public void proximosCliente() {
+        System.out.println("Lista dos próximos clientes da fila");
+
+        if (filaClientes.isEmpty()) { // berifico se a fila está vazia
+            System.out.println("A fila está vazia");
+            return;
+        }
+
+        Solicitacao proximaSolici = filaClientes.peek();
+
+        System.out.println("Lista encerrada.");
+    }
+
+
+    // Atender a próxima solicitação da fila, removendo-a
+    public void proximaSolicitacao() {
+        System.out.println("Próxima solicitação da fila");
+
+        if (filaClientes.isEmpty()) {
+            System.out.println("Fila de atendimeno sem solicitações");
+            return;
+        }
+
 
     }
 
-    // Atender a próxima solicitação da fila, removendo-a
+
+
     // Listar as idades dos clientes já atendidos
     // Listar os telefones dos clientes ainda em espera
 
