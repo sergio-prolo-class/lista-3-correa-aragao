@@ -85,10 +85,24 @@ public class Atendimento {
             return;
         }
 
+       Solicitacao atendeSolicitacao = filaClientes.poll();
+
+        if (atendeSolicitacao != null) {
+            Cliente atendeCliente = atendeSolicitacao.getCliente();
+
+            // lista para os atendidos
+            atendidosClientes.add(atendeCliente);
+
+            System.out.println(atendeCliente.getNome() + " fez a solicitação e " + " foi atendida!");
+            System.out.println(atendeCliente.getNome() + " foi adicionado a lista de clientes atendidos.");
+        } else {
+            System.out.println("Erro na solicitação (lista vazia");
+        }
+
+        System.out.println("Encerrado lista");
 
     }
-
-
+    
 
     // Listar as idades dos clientes já atendidos
     // Listar os telefones dos clientes ainda em espera
