@@ -6,12 +6,12 @@ public class Cliente {
 
     private String nome;
     private int idade;
-    private String numTelefone;
+    private String numTelefones;
 
     public Cliente(String nome, int idade, String numTelefone) {
         this.nome = nome;
         this.idade = idade;
-        this.numTelefone = numTelefone;
+        this.numTelefones = numTelefone;
     }
 
     public String getNome() {
@@ -23,11 +23,11 @@ public class Cliente {
     }
 
     public String getNumTelefone() {
-        return numTelefone;
+        return numTelefones;
     }
 
     @Override
     public String toString() {
-        return "Cliente { " + " nome = '" + nome + '\'' + ", idade = " + idade + ", numTelefone = " + numTelefone + '}';
+        return "Cliente { " + " nome = '" + nome + '\'' + ", idade = " + idade + ", numTelefone = " + numTelefones + '}';
     }
 }

@@ -5,10 +5,7 @@ package ifsc.poo.filaAtendimento;
 // Precisa de uma forma de rastrear os clientes que já passaram pela fila
 // e foram atendidos.
 
-import java.util.ArrayDeque;
-import java.util.List;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
 public class Atendimento {
 
@@ -17,14 +14,34 @@ public class Atendimento {
     private List<Cliente> atendidosClientes;
 
     public Atendimento(Set<Cliente> clienteRegistrados, Queue<String> filaClientes, List<Cliente> atendidosClientes) {
-        this.clienteRegistrados = clienteRegistrados;
+        this.clienteRegistrados = new HashSet<>();
         this.filaClientes = filaClientes;
         this.atendidosClientes = atendidosClientes;
     }
-
-    // metodos
-    // passo 1: eu preciso registrar os dados dos clientes - 1 solicitação
-    // passo 2: preciso listar os telefones de todos os clientes já registrados.
-
     
+
+    // passo 1: eu preciso registrar os dados dos clientes - 1 solicitação
+    public void registrarClientes (String nome, int idade, List<String> telefones) {
+        Cliente clientesNovos = new Cliente(nome, idade, telefones);
+
+        boolean adicionarCliente = clienteRegistrados.add(clientesNovos);
+
+        // aqui eu coloco para ver se o cliente foi registrado.
+        if (adicionarCliente) {
+            System.out.println(nome + " foi adicionado com sucesso");
+        } else {
+            System.out.println(nome + " já foi registrado");
+        }
+    }
+
+    // passo 2: Registrar novas solicitações vindas de um cliente
+    public void adicionarSolicitacao(Cliente cliente, String descricao) {
+
+    }
+
+    // passo 3:
+    public void listarTelefones() {
+        // esse é dos clientes já registrados.
+    }
+
 }
