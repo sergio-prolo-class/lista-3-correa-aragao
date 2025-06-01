@@ -125,5 +125,23 @@ public class Atendimento {
     }
 
     // Listar os telefones dos clientes ainda em espera
+    public void clientesEsperaTelefones() {
+        System.out.println("Telefone dos clientes em espera");
+
+        if (filaClientes.isEmpty()) {
+            System.out.println("Nenhum cliente na fila de espera");
+            return;
+        }
+
+        // for para percorrer a fila
+        for (Solicitacao solicitacao : filaClientes) {
+            Cliente clienteEspera = solicitacao.getCliente();
+
+            String clienteNome = clienteEspera.getNome();
+            String listaTelefone = clienteEspera.getnumTelefone();
+
+            System.out.println("Cliente " + clienteNome + ", Telefone: " + listaTelefone);
+        }
+    }
 
 }
