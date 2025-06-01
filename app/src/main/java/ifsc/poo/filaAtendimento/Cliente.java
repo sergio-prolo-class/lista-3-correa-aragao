@@ -6,12 +6,12 @@ public class Cliente {
 
     private String nome;
     private int idade;
-    private String numTelefones;
+    private List<String> numTelefone;
 
-    public Cliente(String nome, int idade, String numTelefone) {
+    public Cliente(String nome, int idade, List<String> numTelefones) {
         this.nome = nome;
         this.idade = idade;
-        this.numTelefones = numTelefone;
+        this.numTelefone = numTelefones;
     }
 
     public String getNome() {
@@ -22,12 +22,15 @@ public class Cliente {
         return idade;
     }
 
-    public String getNumTelefone() {
-        return numTelefones;
+    public List<String> getNumTelefone() {
+        return numTelefone;
     }
+
+    // colocando o telefone como identificador unico
+    // public boolean telefoneUnico ();
 
     @Override
     public String toString() {
-        return "Cliente { " + " nome = '" + nome + '\'' + ", idade = " + idade + ", numTelefone = " + numTelefones + '}';
+        return "Cliente { " + " nome = '" + nome + '\'' + ", idade = " + idade + ", numTelefone = " + numTelefone + '}';
     }
 }
