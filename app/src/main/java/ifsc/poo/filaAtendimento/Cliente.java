@@ -22,12 +22,21 @@ public class Cliente {
         return idade;
     }
 
-    public List<String> getNumTelefone() {
+    public List<String> getnumTelefone() {
         return numTelefone;
     }
 
     // colocando o telefone como identificador unico
     // public boolean telefoneUnico ();
+    // slides
+//    public boolean equals(Object o) {
+//        if(!(o instanceof Pessoa other)) return false;
+//        return this.nome.equals(p.nome) && this.idade
+//                == other.idade;
+//    }
+//    public int hashCode() {
+//        return nome.hashCode() + idade.hashCode();
+//    }
 
     @Override
     public String toString() {

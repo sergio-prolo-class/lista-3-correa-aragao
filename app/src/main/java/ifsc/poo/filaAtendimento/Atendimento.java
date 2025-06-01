@@ -33,26 +33,41 @@ public class Atendimento {
         }
     }
 
-    // slides
-//    public boolean equals(Object o) {
-//        if(!(o instanceof Pessoa other)) return false;
-//        return this.nome.equals(p.nome) && this.idade
-//                == other.idade;
-//    }
-//    public int hashCode() {
-//        return nome.hashCode() + idade.hashCode();
-//    }
-
     // passo 2: Registrar novas solicitações vindas de um cliente
     public void adicionarSolicitacao(Cliente cliente, String descricao) {
         Solicitacao solicitacaoNova = new Solicitacao(descricao, cliente);
 
-        boolean adicionarSolicitacao = solicitacaoNova.add();
+        filaClientes.add(solicitacaoNova); // adicionando a solicititação a minha fila
+        System.out.println("A solicitação de " + cliente.getNome() + " foi colocada na fila");
     }
 
-    // passo 3:
+    // passo 3: Listar os telefones de todos os clientes já registrados
     public void listarTelefones() {
-        // esse é dos clientes já registrados.
+        System.out.println("Lista de Telefones registrados -> Clientes");
+
+        if (clienteRegistrados.isEmpty()) { // verificar se eu tenho clientes na base
+            System.out.println("Não há clientes registrados.");
+            return;
+        }
+
+        for (Cliente cliente : clienteRegistrados) {
+            String clienteNome = cliente.getNome();
+
+            List<String> telefones = cliente.getnumTelefone();
+            System.out.println(clienteNome + " e seu telefone: " + telefones);
+        }
+
+        System.out.println("Lista encerrada.");
     }
+
+
+    // próximo clientes da fila
+    public void proximosClientes {
+
+    }
+
+    // Atender a próxima solicitação da fila, removendo-a
+    // Listar as idades dos clientes já atendidos
+    // Listar os telefones dos clientes ainda em espera
 
 }
