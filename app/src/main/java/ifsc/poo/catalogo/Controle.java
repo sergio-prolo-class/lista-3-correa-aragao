@@ -30,7 +30,26 @@ public class Controle {
                 case 1:
 
                     System.out.println("Digite o título do filme");
+                    String filmeN = scanner.nextLine();
+
+                    System.out.println("Ano de lançamento: ");
+                    int anoLancamento = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Genero do filme: ");
+                    String generoFilme = scanner.nextLine();
+
+                    Filme filmeNovo = new Filme(anoLancamento, filmeN, generoFilme);
+                    catalogo.adicionarFilmes(filmeNovo);
+                    System.out.println("O filme foi adicionado!");
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    System.out.println("Opção inválida, tente de novo");
             }
+
 
         } while (opcao != 0); // O loop continua enquanto a opção não for "0
     }
