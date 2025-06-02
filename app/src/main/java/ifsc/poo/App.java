@@ -19,7 +19,7 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int principalOpcao;
+        int principalOpcao = -1;
 
         // Menu - Filmes
         Set<Filme> filmes = new HashSet<>();
@@ -43,9 +43,11 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         Atendimento atendimento = new Atendimento(clientesAtendidos, clientesFila, clientesRegistrados);
-        Controle filaAtendimento = new Controle (atendimento, scanner);
+        Controle filaAtendimento = new Controle(atendimento, scanner);
 
         filaAtendimento.executar(); // menu do controle
+
+        // Menu Principan - App
 
         do {
             System.out.println("Menu Principal");
@@ -56,21 +58,21 @@ public class App {
             principalOpcao = teclado.nextInt();
             teclado.nextLine();
 
+            String terminal = teclado.nextLine();
+
             switch (principalOpcao) {
                 case 1:
-                    filme.executar(); // Chama o menu de filmes
+                    controleMenu.executar();
                     break;
                 case 2:
-                    System.out.println("Fila de atendimento");
-                    controle.executar();
-                    break;
-                case 0:
-                    System.out.println("Encerrado Menu");
-                    break;
+                case 3:
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    System.out.println("Opção inválida, tente de novo!");
             }
 
+
         } while (principalOpcao != 0);
-        }
+
+        teclado.close();
+    }
 }
