@@ -19,7 +19,7 @@ public class Catalogo {
 
     // remover filmes
     public void removerFilmes(String nome_do_filme_para_remover) {
-        filme.removeIf(filme -> filme.getNome().equals(nome_do_filme_para_remover))
+        filme.removeIf(filme -> filme.getNome().equals(nome_do_filme_para_remover));
     }
 
     //Listar filmes

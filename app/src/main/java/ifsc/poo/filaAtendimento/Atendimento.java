@@ -117,7 +117,7 @@ public class Atendimento {
             String clienteNome = cliente.getNome();
             int clienteIdade = cliente.getIdade();
 
-            System.out.println("Cliente " + clienteNome + ", tem idade: " + clienteIdade " anos");
+            System.out.println("Cliente " + clienteNome + ", tem idade: " + clienteIdade + " anos");
         }
 
         System.out.println("Lista encerrada.");
