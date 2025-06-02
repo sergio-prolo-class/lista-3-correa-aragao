@@ -47,8 +47,7 @@ public class App {
 
         filaAtendimento.executar(); // menu do controle
 
-        // Menu Principan - App
-
+        // Menu Principal - App
         do {
             System.out.println("Menu Principal");
             System.out.println("1 - Gerenciar Filmes");
@@ -58,13 +57,10 @@ public class App {
             principalOpcao = teclado.nextInt();
             teclado.nextLine();
 
-            principalOpcao = teclado.nextInt();
-            teclado.nextLine();
-
             switch (principalOpcao) {
-                case 1:
-                    controleMenu.executar();
-                    break;
+//                case 1:
+//                    controleMenu.executar();
+//                    break;
                 case 2:
                     filaAtendimento.executar();
                     break;
