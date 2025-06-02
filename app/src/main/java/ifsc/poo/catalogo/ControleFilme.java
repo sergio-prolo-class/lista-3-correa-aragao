@@ -2,11 +2,11 @@ package ifsc.poo.catalogo;
 
 import java.util.Scanner;
 
-public class Controle {
+public class ControleFilme {
 
     private Catalogo catalogo;
 
-    public Controle(Catalogo catalogo) {
+    public ControleFilme(Catalogo catalogo) {
         this.catalogo = catalogo;
     }
 
