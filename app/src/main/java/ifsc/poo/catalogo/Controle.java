@@ -27,7 +27,7 @@ public class Controle {
             scanner.nextLine();
 
             switch (opcao) {
-                case 1:
+                case 1: // adicionar filme
 
                     System.out.println("Digite o título do filme");
                     String filmeN = scanner.nextLine();
@@ -43,8 +43,18 @@ public class Controle {
                     catalogo.adicionarFilmes(filmeNovo);
                     System.out.println("O filme foi adicionado!");
                     break;
-                case 2:
-                case 3:
+                case 2: // para remover o filme
+
+                    System.out.println("Titulo do filme para ser removido: ");
+                    String removerNome = scanner.nextLine();
+                    catalogo.removerFilmes(removerNome);
+                    System.out.println("Filme removido!");
+                    break;
+                case 3: // listar filmes
+
+                    System.out.println("Filmes que existem no catalogo");
+                    catalogo.listarFilmes();
+                    break;
                 case 4:
                 default:
                     System.out.println("Opção inválida, tente de novo");
