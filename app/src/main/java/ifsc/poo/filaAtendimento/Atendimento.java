@@ -138,7 +138,7 @@ public class Atendimento {
             Cliente clienteEspera = solicitacao.getCliente();
 
             String clienteNome = clienteEspera.getNome();
-            String listaTelefone = clienteEspera.getnumTelefone();
+            List<String> listaTelefone = clienteEspera.getnumTelefone();
 
             System.out.println("Cliente " + clienteNome + ", Telefone: " + listaTelefone);
         }
