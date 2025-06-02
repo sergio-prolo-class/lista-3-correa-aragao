@@ -56,11 +56,13 @@ public class Controle {
                     catalogo.listarFilmes();
                     break;
                 case 4:
+                    System.out.println("Saida do menu.");
                 default:
                     System.out.println("Opção inválida, tente de novo");
             }
 
-
         } while (opcao != 0); // O loop continua enquanto a opção não for "0
+
+        scanner.close();
     }
 }
