@@ -144,4 +144,19 @@ public class Atendimento {
         }
     }
 
+    // para encontrar o cliente pelo numero
+    public Cliente encontrarClienteTelefone(String telefone) {
+        // Para cada Cliente, pego a lista de tel e verifico.
+
+        for (Cliente cliente : clienteRegistrados) {
+            List<String> telefonesCliente = cliente.getnumTelefone(); // Use seu getter correto!
+
+            // Verifica se telefone que estamos buscando apareceu.
+            if (telefonesCliente != null && telefonesCliente.contains(telefonesCliente)) {
+                return cliente; // se encontrar o cliente, return ele
+            }
+        }
+        return null; // caso não encontrar retorna nulo
+    }
+
 }

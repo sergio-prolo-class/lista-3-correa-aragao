@@ -6,8 +6,16 @@ package ifsc.poo;
 // A comunicação com o usuário deve ser através do terminal
 // usando um menu iterativo, através do qual é
 
+import ifsc.poo.catalogo.Controle;
+
 public class App {
     public static void main(String[] args) {
+
+        System.out.println("Fila de atendimento - Iniciar");
+
+        Controle filaAtendimento = new Controle();
+        filaAtendimento.executar(); // menu do controle
+        }
 
     }
 }

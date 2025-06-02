@@ -11,9 +11,7 @@ public class Filme {
         this.anoLancamento = anoLancamento;
         this.nome = nome;
         this.generoFilme = generoFilme;
-
     }
-
 
     public String getNome() {
         return nome;
