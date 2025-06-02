@@ -3,6 +3,15 @@
 
 ## Alunas: Ingridy Aragão e Isabella Corrêa.
 
+### Como Executar
+
+Para compilar e executar o projeto, certifique-se de que o Java Development Kit (JDK) e o Gradle estão instalados e configurados corretamente em sua máquina.
+
+Clone o repositório: git clone <URL_DO_SEU_REPOSITORIO> cd <nome_do_repositorio>
+
+- Navegue até a pasta raiz do projeto Gradle.
+- Execute o programa: ./gradlew run (em sistema Linux)
+- O programa iniciará com um menu interativo no terminal, permitindo a interação com o sistema de Fila de Atendimento.
 
 ```mermaid
 classDiagram
@@ -30,22 +39,27 @@ classDiagram
     %% Fila de atendimento.
     
     class ControleFila {
-        + executar() : void
+        - sistemaAtendimento: Atendimento
+        - entrada: Scanner
+        + Controle()
+        + executar(): void
+        - exibirMenu(): void
+        - processarOpcao(opcao: int): void
     }
     
     class Atendimento {
-        - clientesRegistrados: Set<Cliente>
+        - clienteRegistrados: Set<Cliente>
         - filaClientes: Queue<Solicitacao>
         - atendidosClientes: List<Cliente>
         + Atendimento()
         + registrarClientes(nome: String, idade: int, telefones: List<String>): void
         + adicionarSolicitacao(cliente: Cliente, descricao: String): void
         + listarTelefones(): void
-        + imprimirProximoClienteFila(): void
-        + atenderProximaSolicitacao(): void
-        + listarIdadesClientesAtendidos(): void
-        + listarTelefonesClientesEmEspera(): void
-        + encontrarClientePorTelefone(telefone: String): Cliente
+        + proximosCliente(): void
+        + proximaSolicitacao(): void
+        + clientesAtendidosIdades(): void
+        + clientesEsperaTelefones(): void
+        + encontrarClienteTelefone(telefone: String): Cliente
     }
     
     class Cliente {
