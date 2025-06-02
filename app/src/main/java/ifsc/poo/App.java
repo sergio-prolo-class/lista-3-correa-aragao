@@ -30,7 +30,7 @@ public class App {
         filmes.add(new Filme(2008, "Mamma Mia!\n", "Romance"));
 
         Catalogo catalogoMenu = new Catalogo(filmes);
-        ControleFilme controleMenu = new Controle(catalogoMenu);
+        ControleFilme controleMenu = new ControleFilme(catalogoMenu);
         controleMenu.executar();
 
 
@@ -58,11 +58,11 @@ public class App {
 
             switch (principalOpcao) {
                 case 1:
-                    filmes.executar(); // Chama o menu de filmes
+                    filme.executar(); // Chama o menu de filmes
                     break;
                 case 2:
                     System.out.println("Fila de atendimento");
-                    atendimento.executar();
+                    controle.executar();
                     break;
                 case 0:
                     System.out.println("Encerrado Menu");
