@@ -9,7 +9,7 @@ public class Controle {
     private Atendimento atendimento;
     private Scanner console; // ler o que o usuario digitar
 
-    public Controle() {
+    public Controle(Atendimento atendimento, Scanner console) {
         this.atendimento = atendimento;
         this.console = console;
     }

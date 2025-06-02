@@ -34,12 +34,44 @@ classDiagram
     }
     
     class Atendimento {
-        - int Clientes
-        - String solicitacoes 
-        - 
-        + adicionarSolicitacao() : void
-        + listarTelefones() : List<String>
+        - clientesRegistrados: Set<Cliente>
+        - filaClientes: Queue<Solicitacao>
+        - atendidosClientes: List<Cliente>
+        + Atendimento()
+        + registrarClientes(nome: String, idade: int, telefones: List<String>): void
+        + adicionarSolicitacao(cliente: Cliente, descricao: String): void
+        + listarTelefones(): void
+        + imprimirProximoClienteFila(): void
+        + atenderProximaSolicitacao(): void
+        + listarIdadesClientesAtendidos(): void
+        + listarTelefonesClientesEmEspera(): void
+        + encontrarClientePorTelefone(telefone: String): Cliente
     }
+    
+    class Cliente {
+        - nome: String
+        - idade: int
+        - numTelefone: List<String>
+        + Cliente(nome: String, idade: int, numTelefone: List<String>)
+        + getNome(): String
+        + getIdade(): int
+        + getnumTelefone(): List<String>
+        + equals(Object o): boolean
+        + hashCode(): int
+        + toString(): String
+    }
+    
+    class Solicitacao {
+        - cliente: Cliente
+        + Solicitacao(descricao: String, cliente: Cliente)
+        + getDescricao(): String
+        + getCliente(): Cliente
+    }
+
+    Controle --|> Atendimento : usa
+    Atendimento "1" *-- "0..*" Cliente : registra
+    Atendimento "1" *-- "0..*" Solicitacao : gerencia
+    Solicitacao "0..*" -- "1" Cliente : feita por
         
         
 
