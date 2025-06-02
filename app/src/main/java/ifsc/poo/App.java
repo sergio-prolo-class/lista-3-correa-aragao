@@ -58,14 +58,18 @@ public class App {
             principalOpcao = teclado.nextInt();
             teclado.nextLine();
 
-            String terminal = teclado.nextLine();
+            principalOpcao = teclado.nextInt();
+            teclado.nextLine();
 
             switch (principalOpcao) {
                 case 1:
                     controleMenu.executar();
                     break;
                 case 2:
+                    filaAtendimento.executar();
+                    break;
                 case 3:
+                    System.out.println("Programa encerrado.");
                 default:
                     System.out.println("Opção inválida, tente de novo!");
             }
