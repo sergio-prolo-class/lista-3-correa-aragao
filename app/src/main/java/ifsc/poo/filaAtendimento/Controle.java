@@ -10,8 +10,8 @@ public class Controle {
     private Scanner console; // ler o que o usuario digitar
 
     public Controle() {
-        this.atendimento = new Atendimento();
-        this.console = new Scanner(System.in);
+        this.atendimento = atendimento;
+        this.console = console;
     }
 
     // metodo para executar o menu
